@@ -106,7 +106,7 @@ DownStar is [MIT licensed](LICENSE) and free for both personal and commercial us
 
 ## 🌟 Author
 
-**Anshul Namdev (Shanks)**
+**Anshul Namdev (Axshul)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-%40username-blue?style=flat-square&logo=github)](https://github.com/Axshul)
 
