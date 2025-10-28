@@ -5,8 +5,8 @@
 ### The Next Generation Web Components Library
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/yourusername/DownStar/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/DownStar.svg)](https://github.com/yourusername/DownStar/stargazers)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Axshul/DownStar/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/Axshul/DownStar.svg)](https://github.com/Axshul/DownStar/stargazers)
 
 *Elevate your web projects with zero-dependency, plug-and-play components.*
 
@@ -32,7 +32,7 @@ Add powerful components to your website in seconds:
 
 ```html
 <!-- Add Toast Notifications -->
-<script src="https://yourusername.github.io/DownStar/toast/Call.js"></script>
+<script src="https://Axshul.github.io/DownStar/toast/Call.js"></script>
 ```
 
 ```javascript
@@ -108,7 +108,7 @@ DownStar is [MIT licensed](LICENSE) and free for both personal and commercial us
 
 **Anshul Namdev (Shanks)**
 
-[![GitHub](https://img.shields.io/badge/GitHub-%40username-blue?style=flat-square&logo=github)](https://github.com/yourusername)
+[![GitHub](https://img.shields.io/badge/GitHub-%40username-blue?style=flat-square&logo=github)](https://github.com/Axshul)
 
 *Built with ❤️ for the modern web*
 
