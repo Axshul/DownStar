@@ -1,2 +1,2 @@
 # DownStar
-DownStar is a Micro BaaS, which provide futuristic usable modules and SKDs for the END user to level up their UI without worrying about responsiveness or code clash
+>DownStar is a free, modular, web-based library hosting system (like a micro BaaS or developer CDN) that lets developers easily plug functional modules (like Toasts, Modals, or Utils) into their projects using a single line of script.
