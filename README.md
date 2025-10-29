@@ -80,6 +80,9 @@ Modular loading for development and customization:
 - ✅ Great for learning
 - ✅ Perfect for contributing
 
+![App Screenshot Placeholder](src/DEV_Modedraw.png)
+
+
 ## 🏗️ Architecture
 
 Each DownStar module follows a hybrid architecture that supports both production and development needs:
