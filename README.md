@@ -80,7 +80,7 @@ Modular loading for development and customization:
 - ✅ Great for learning
 - ✅ Perfect for contributing
 
-![App Screenshot Placeholder](src/DEV_Modedraw.png)
+![App Screenshot Placeholder](src/Dev_ModeVisual.svg)
 
 
 ## 🏗️ Architecture
