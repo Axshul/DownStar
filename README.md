@@ -56,17 +56,72 @@ Our growing library of components includes:
 - 🚨 Alert Banners
 - 🛠️ Utility SDKs
 
+## ⚡ Integration Methods
+
+DownStar offers two integration methods to suit different needs:
+
+### 1. Production Mode (Recommended for End Users)
+Single-file bundle for optimal performance:
+```html
+<script src="https://yourusername.github.io/DownStar/toast/Toast.bundle.js"></script>
+```
+- ✅ Faster loading
+- ✅ Single network request
+- ✅ Production optimized
+- ✅ Minified code
+
+### 2. Developer Mode (For Customization)
+Modular loading for development and customization:
+```html
+<script src="https://yourusername.github.io/DownStar/toast/Call.js"></script>
+```
+- ✅ Separate logic and styles
+- ✅ Easy to modify
+- ✅ Great for learning
+- ✅ Perfect for contributing
+
+## 🏗️ Architecture
+
+Each DownStar module follows a hybrid architecture that supports both production and development needs:
+
+```
+module-name/
+├── Logic.js          # Core functionality
+├── Styles.css        # Component styling
+├── Call.js          # Development mode loader
+└── Module.bundle.js  # Production-ready bundle
+```
+
+### Why Hybrid Architecture?
+
+Our hybrid approach offers the best of both worlds:
+
+| Feature | Production Mode | Developer Mode |
+|---------|----------------|----------------|
+| Network Requests | Single request | Multiple modular requests |
+| File Size | Optimized bundle | Separated files |
+| Customization | Ready to use | Fully customizable |
+| Use Case | Live websites | Development/Learning |
+
 ## 🗂️ Project Structure
 
 ```
 DownStar/
-├── toast/           # Toast notification module
-│   ├── Logic.js     # Core functionality
-│   ├── Styles.css   # Component styling
-│   └── Call.js      # Public API
-├── index.html       # Documentation & demos
-└── README.md        # Project documentation
+├── toast/                # Toast notification module
+│   ├── Logic.js         # Core functionality
+│   ├── Styles.css       # Component styling
+│   ├── Call.js         # Developer mode loader
+│   └── Toast.bundle.js  # Production bundle
+├── modal/                # Modal dialog module
+│   ├── Logic.js         # Core functionality
+│   ├── Styles.css       # Component styling
+│   ├── Call.js         # Developer mode loader
+│   └── Modal.bundle.js  # Production bundle
+├── index.html           # Documentation & demos
+└── README.md            # Project documentation
 ```
+
+Each module maintains both development files and a production-ready bundle to support our hybrid architecture.
 
 ## � Philosophy
 
