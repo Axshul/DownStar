@@ -208,30 +208,139 @@
     <section class="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-black mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">Get Started in Seconds</h2>
-                <p class="text-gray-300 text-xl font-light">Just add one line to your HTML and start using powerful modules</p>
+                <h2 class="text-4xl sm:text-5xl font-black mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">Two Ways to Integrate</h2>
+                <p class="text-gray-300 text-xl font-light">Choose the method that fits your needs - production or development</p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="card-modern p-8 rounded-2xl shadow-2xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex space-x-2">
-                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Production Mode -->
+                <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-green-500">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
                         </div>
-                        <span class="text-gray-400 text-sm font-mono">index.html</span>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Production Mode</h3>
+                            <p class="text-green-400 text-sm font-semibold">Recommended for End Users</p>
+                        </div>
                     </div>
-                    <div class="code-block border-0 bg-gray-900/50 rounded-xl">
-                        <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Call.js"&gt;&lt;/script&gt;</code>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-400 text-sm font-mono">Single Bundle</span>
+                        </div>
+                        <div class="code-block border-0 bg-gray-900/50 rounded-lg text-sm">
+                            <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center space-x-2 text-green-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Faster loading</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Single request</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Optimized</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Minified</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+                        <p class="text-green-300 text-sm font-medium">Perfect for live websites and production environments</p>
                     </div>
                 </div>
-                <div class="text-center mt-8">
-                    <p class="text-gray-300 text-lg">That's it! Now you can use Toast notifications in your project.</p>
-                    <div class="inline-flex items-center space-x-2 mt-4 px-4 py-2 glassmorphism rounded-full text-sm text-purple-300">
-                        <span>✨</span>
-                        <span>Zero configuration required</span>
+                
+                <!-- Developer Mode -->
+                <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-blue-500">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Developer Mode</h3>
+                            <p class="text-blue-400 text-sm font-semibold">For Customization</p>
+                        </div>
                     </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-400 text-sm font-mono">Modular Loading</span>
+                        </div>
+                        <div class="code-block border-0 bg-gray-900/50 rounded-lg text-sm">
+                            <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Call.js"&gt;&lt;/script&gt;</code>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Separate files</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Easy to modify</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Great for learning</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Perfect for contributing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                        <p class="text-blue-300 text-sm font-medium">Ideal for development, learning, and customization</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center space-x-2 px-6 py-3 glassmorphism rounded-full text-sm text-purple-300">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    <span>Both methods work identically - choose what fits your workflow!</span>
                 </div>
             </div>
         </div>
@@ -239,6 +348,120 @@
         <!-- Background decoration -->
         <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="section-padding bg-gradient-to-br from-black via-gray-900 to-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Hybrid Architecture</h2>
+                <p class="text-gray-300 text-lg">Best of both worlds - performance and flexibility</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Architecture Diagram -->
+                <div class="card-modern p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Module Structure</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-gradient-to-r from-purple-500/10 to-purple-600/10 rounded-xl border border-purple-500/20">
+                            <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-mono text-purple-300 font-semibold">Logic.js</div>
+                                <div class="text-gray-400 text-sm">Core functionality</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-xl border border-blue-500/20">
+                            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2zM9 9h6l-6-6v6zM15 9h6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-mono text-blue-300 font-semibold">Styles.css</div>
+                                <div class="text-gray-400 text-sm">UI styling</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-xl border border-green-500/20">
+                            <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-mono text-green-300 font-semibold">Call.js</div>
+                                <div class="text-gray-400 text-sm">Developer mode loader</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 rounded-xl border border-yellow-500/20">
+                            <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-mono text-yellow-300 font-semibold">Module.bundle.js</div>
+                                <div class="text-gray-400 text-sm">Production-ready bundle</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comparison Table -->
+                <div class="card-modern p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Why Hybrid?</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-gray-700">
+                                    <th class="text-left py-3 text-gray-300 font-semibold">Feature</th>
+                                    <th class="text-center py-3 text-green-400 font-semibold">Production</th>
+                                    <th class="text-center py-3 text-blue-400 font-semibold">Developer</th>
+                                </tr>
+                            </thead>
+                            <tbody class="space-y-2">
+                                <tr class="border-b border-gray-800">
+                                    <td class="py-3 text-gray-300">Network Requests</td>
+                                    <td class="text-center py-3 text-green-300">Single request</td>
+                                    <td class="text-center py-3 text-blue-300">Multiple modular</td>
+                                </tr>
+                                <tr class="border-b border-gray-800">
+                                    <td class="py-3 text-gray-300">File Size</td>
+                                    <td class="text-center py-3 text-green-300">Optimized bundle</td>
+                                    <td class="text-center py-3 text-blue-300">Separated files</td>
+                                </tr>
+                                <tr class="border-b border-gray-800">
+                                    <td class="py-3 text-gray-300">Customization</td>
+                                    <td class="text-center py-3 text-green-300">Ready to use</td>
+                                    <td class="text-center py-3 text-blue-300">Fully customizable</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 text-gray-300">Use Case</td>
+                                    <td class="text-center py-3 text-green-300">Live websites</td>
+                                    <td class="text-center py-3 text-blue-300">Development/Learning</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/20">
+                        <p class="text-purple-300 text-sm font-medium text-center">
+                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            Future-proof design supports automated bundling for all modules
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Features -->
@@ -360,21 +583,62 @@
                             </div>
                             <h3 class="text-3xl font-bold text-white">Installation</h3>
                         </div>
-                        <p class="text-gray-300 mb-6 text-lg leading-relaxed">Getting started with DownStar is incredibly simple. Just include the module you want to use via a script tag:</p>
-                        <div class="card-modern p-6 rounded-xl mb-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex space-x-2">
-                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <p class="text-gray-300 mb-8 text-lg leading-relaxed">DownStar offers two integration methods to suit different needs:</p>
+                        
+                        <!-- Production Mode -->
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
                                 </div>
-                                <span class="text-gray-400 text-sm font-mono">HTML</span>
+                                <h4 class="text-xl font-bold text-white">Production Mode</h4>
+                                <span class="ml-3 px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-semibold">Recommended</span>
                             </div>
-                            <div class="code-block border-0 bg-gray-900/50 rounded-lg">
-                                <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/[module-name]/Call.js"&gt;&lt;/script&gt;</code>
+                            <div class="card-modern p-6 rounded-xl mb-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex space-x-2">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    </div>
+                                    <span class="text-gray-400 text-sm font-mono">Single Bundle</span>
+                                </div>
+                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
+                                    <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
+                                </div>
                             </div>
+                            <p class="text-gray-300 text-sm mb-4">Single-file bundle for optimal performance - faster loading, single network request, production optimized.</p>
                         </div>
-                        <p class="text-gray-300 text-lg">Replace <span class="bg-gradient-to-r from-purple-500 to-blue-500 px-3 py-1 rounded-lg text-sm font-mono text-white">[module-name]</span> with the module you want to use (e.g., toast, modal, utils).</p>
+                        
+                        <!-- Developer Mode -->
+                        <div class="mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-bold text-white">Developer Mode</h4>
+                                <span class="ml-3 px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">For Customization</span>
+                            </div>
+                            <div class="card-modern p-6 rounded-xl mb-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex space-x-2">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    </div>
+                                    <span class="text-gray-400 text-sm font-mono">Modular Loading</span>
+                                </div>
+                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
+                                    <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Call.js"&gt;&lt;/script&gt;</code>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm">Modular loading for development and customization - separate logic and styles, easy to modify, perfect for learning.</p>
+                        </div>
                     </div>
                     
                     <!-- Available Modules -->
@@ -486,28 +750,76 @@
                             </div>
                             <h3 class="text-3xl font-bold text-white">Usage Examples</h3>
                         </div>
-                        <p class="text-gray-300 mb-6 text-lg leading-relaxed">Here's a complete example using the Toast module:</p>
-                        <div class="card-modern p-6 rounded-xl mb-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex space-x-2">
-                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <p class="text-gray-300 mb-8 text-lg leading-relaxed">Here are complete examples using both integration methods:</p>
+                        
+                        <!-- Production Mode Example -->
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
                                 </div>
-                                <span class="text-gray-400 text-sm font-mono">example.html</span>
+                                <h4 class="text-xl font-bold text-white">Production Mode Example</h4>
                             </div>
-                            <div class="code-block border-0 bg-gray-900/50 rounded-lg">
-                                <code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
+                            <div class="card-modern p-6 rounded-xl mb-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex space-x-2">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    </div>
+                                    <span class="text-gray-400 text-sm font-mono">production.html</span>
+                                </div>
+                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
+                                    <code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;script src="<span class="text-cyan-400">https://Axshul.github.io/DownStar/toast/Toast.bundle.js</span>"&gt;&lt;/script&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">Toast.show('Hello from DownStar! 🚀')</span>"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Show Toast<br>
+&nbsp;&nbsp;&lt;/button&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Developer Mode Example -->
+                        <div class="mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-xl font-bold text-white">Developer Mode Example</h4>
+                            </div>
+                            <div class="card-modern p-6 rounded-xl mb-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex space-x-2">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    </div>
+                                    <span class="text-gray-400 text-sm font-mono">development.html</span>
+                                </div>
+                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
+                                    <code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
 &lt;html&gt;<br>
 &lt;head&gt;<br>
 &nbsp;&nbsp;&lt;script src="<span class="text-cyan-400">https://Axshul.github.io/DownStar/toast/Call.js</span>"&gt;&lt;/script&gt;<br>
 &lt;/head&gt;<br>
 &lt;body&gt;<br>
-&nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">DownStar.toast.show('Success!', 'success')</span>"&gt;<br>
+&nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">Toast.show('Hello, Dev Mode! 👨‍💻')</span>"&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Show Toast<br>
 &nbsp;&nbsp;&lt;/button&gt;<br>
 &lt;/body&gt;<br>
 &lt;/html&gt;</code>
+                                </div>
                             </div>
                         </div>
                         <p class="text-gray-300 text-lg">Visit the <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text hover:from-purple-300 hover:to-blue-300 font-semibold transition-all duration-300">GitHub repository</a> for more detailed examples and API documentation.</p>
@@ -820,5 +1132,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99597d2c23ce3e0a',t:'MTc2MTY0NDYwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99642e6f52823a37',t:'MTc2MTc1NjcyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
