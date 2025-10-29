@@ -63,7 +63,7 @@ DownStar offers two integration methods to suit different needs:
 ### 1. Production Mode (Recommended for End Users)
 Single-file bundle for optimal performance:
 ```html
-<script src="https://yourusername.github.io/DownStar/toast/Toast.bundle.js"></script>
+<script src="https://axshul.github.io/DownStar/toast/Toast.bundle.js"></script>
 ```
 - ✅ Faster loading
 - ✅ Single network request
@@ -73,7 +73,7 @@ Single-file bundle for optimal performance:
 ### 2. Developer Mode (For Customization)
 Modular loading for development and customization:
 ```html
-<script src="https://yourusername.github.io/DownStar/toast/Call.js"></script>
+<script src="https://axshul.github.io/DownStar/toast/Call.js"></script>
 ```
 - ✅ Separate logic and styles
 - ✅ Easy to modify
