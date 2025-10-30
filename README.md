@@ -85,7 +85,67 @@ Modular loading for development and customization:
 ![Screenshot Placeholder](src/DEV_FINALVisual.svg)
 
 
-## 🏗️ Architecture
+## � CDN & Hosting (GitHub Pages + jsDelivr)
+
+DownStar is hosted via GitHub Pages (user page: `https://axshul.github.io/DownStar`) and globally distributed through the jsDelivr CDN. This gives you three convenient ways to consume modules depending on your needs.
+
+| Mode | URL example | Description |
+|------|-------------|-------------|
+| Development | `https://axshul.github.io/DownStar/toast/Call.js` | Loads `Logic.js` + `Styles.css` via the module loader — editable and readable (dev-friendly). |
+| Production | `https://axshul.github.io/DownStar/toast/Toast.bundle.js` | Single-file bundle hosted on GitHub Pages — optimized for production use. |
+| CDN (jsDelivr) | `https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js` | Fast, globally cached delivery via jsDelivr — recommended for public sites. |
+
+### ✅ Why use jsDelivr?
+
+- No sign-up required — any public GitHub repo can be served via jsDelivr.
+- Global caching and fast edge delivery.
+- Supports versioned URLs (ideal for immutable releases) and `@latest` for auto-updating.
+
+### jsDelivr URL formats (examples)
+
+- Latest (auto-updating):
+   `https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js`
+- Version-specific (recommended for stable releases):
+   `https://cdn.jsdelivr.net/gh/Axshul/DownStar@v1.0.0/toast/Toast.bundle.js`
+
+> Tip: Tag stable releases in GitHub (e.g., `v1.0.0`) and reference the versioned jsDelivr URL to ensure cached, immutable files for production.
+
+### Quick usage examples
+
+Development (editable):
+```html
+<script src="https://axshul.github.io/DownStar/toast/Call.js"></script>
+<script>
+   Toast.show("Hello, Dev Mode! 👨‍💻");
+</script>
+```
+
+Production (single-file bundle):
+```html
+<script src="https://axshul.github.io/DownStar/toast/Toast.bundle.js"></script>
+<script>
+   Toast.show("Hello from DownStar 🚀");
+</script>
+```
+
+CDN (recommended for public sites):
+```html
+<script src="https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js"></script>
+<script>
+   Toast.show("Hello from CDN-loaded DownStar 🌍");
+</script>
+```
+
+### Versioning & Release workflow (short)
+
+1. Commit module code to `main`.
+2. When ready, create a GitHub Release and tag (e.g., `v1.0.0`).
+3. Use the versioned jsDelivr URL in production to get immutable cached assets.
+
+This setup gives you fast global delivery (jsDelivr) plus the simplicity of GitHub Pages hosting for development and demos.
+
+
+## �🏗️ Architecture
 
 Each DownStar module follows a hybrid architecture that supports both production and development needs:
 
