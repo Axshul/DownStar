@@ -1,6 +1,6 @@
-<!doctype doctype>
 <html lang="en">
  <head>
+  <script src="https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DownStar - Modular Web Library Hosting</title>
@@ -165,8 +165,55 @@
   <section class="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
    <div class="max-w-7xl mx-auto relative z-10">
     <div class="text-center mb-16">
-     <h2 class="text-4xl sm:text-5xl font-black mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">Two Ways to Integrate</h2>
-     <p class="text-gray-300 text-xl font-light">Choose the method that fits your needs - production or development</p>
+     <h2 class="text-4xl sm:text-5xl font-black mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">Three Ways to Integrate</h2>
+     <p class="text-gray-300 text-xl font-light">Choose the method that fits your needs - CDN, production, or development</p>
+    </div><!-- CDN Access Section -->
+    <div class="max-w-5xl mx-auto mb-16">
+     <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-cyan-500 text-center">
+      <div class="flex items-center justify-center mb-6">
+       <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+        </svg>
+       </div>
+       <div>
+        <h3 class="text-3xl font-bold text-white">CDN Access via jsDelivr</h3>
+        <p class="text-cyan-400 text-lg font-semibold">Fastest Global Delivery - Recommended</p>
+       </div>
+      </div>
+      <p class="text-gray-300 text-lg mb-8 leading-relaxed">DownStar modules are globally distributed through jsDelivr CDN, giving developers instant, fast, and free access anywhere in the world with automatic updates.</p>
+      <div class="mb-8 p-6 bg-gradient-to-br from-cyan-500/5 to-cyan-600/5 rounded-xl border border-cyan-500/20">
+       <div class="flex items-center justify-between mb-3">
+        <div class="flex space-x-2">
+         <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+         <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div><span class="text-gray-400 text-sm font-mono">Global CDN</span>
+       </div>
+       <div class="code-block border-0 bg-gray-900/50 rounded-lg text-sm"><code class="text-cyan-300">&lt;script src="https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
+       </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+       <div class="flex items-center space-x-2 text-cyan-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Global CDN</span>
+       </div>
+       <div class="flex items-center space-x-2 text-cyan-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Auto-updated</span>
+       </div>
+       <div class="flex items-center space-x-2 text-cyan-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Ultra-fast</span>
+       </div>
+       <div class="flex items-center space-x-2 text-cyan-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Version control</span>
+       </div>
+      </div>
+      <div class="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-4">
+       <p class="text-cyan-300 text-sm font-medium">⚡ Recommended for production - Fastest delivery with automatic updates and global edge caching</p>
+      </div>
+     </div>
     </div><!-- Visual Diagrams Section -->
     <div class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-12"><!-- Production Mode -->
      <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-green-500">
@@ -365,30 +412,35 @@
         <thead>
          <tr class="border-b border-gray-700">
           <th class="text-left py-3 text-gray-300 font-semibold">Feature</th>
+          <th class="text-center py-3 text-cyan-400 font-semibold">CDN</th>
           <th class="text-center py-3 text-green-400 font-semibold">Production</th>
           <th class="text-center py-3 text-blue-400 font-semibold">Developer</th>
          </tr>
         </thead>
         <tbody class="space-y-2">
          <tr class="border-b border-gray-800">
-          <td class="py-3 text-gray-300">Network Requests</td>
+          <td class="py-3 text-gray-300">Network Speed</td>
+          <td class="text-center py-3 text-cyan-300">Ultra-fast CDN</td>
           <td class="text-center py-3 text-green-300">Single request</td>
           <td class="text-center py-3 text-blue-300">Multiple modular</td>
          </tr>
          <tr class="border-b border-gray-800">
-          <td class="py-3 text-gray-300">File Size</td>
-          <td class="text-center py-3 text-green-300">Optimized bundle</td>
-          <td class="text-center py-3 text-blue-300">Separated files</td>
+          <td class="py-3 text-gray-300">Updates</td>
+          <td class="text-center py-3 text-cyan-300">Automatic</td>
+          <td class="text-center py-3 text-green-300">Manual</td>
+          <td class="text-center py-3 text-blue-300">Manual</td>
          </tr>
          <tr class="border-b border-gray-800">
           <td class="py-3 text-gray-300">Customization</td>
+          <td class="text-center py-3 text-cyan-300">Ready to use</td>
           <td class="text-center py-3 text-green-300">Ready to use</td>
           <td class="text-center py-3 text-blue-300">Fully customizable</td>
          </tr>
          <tr>
-          <td class="py-3 text-gray-300">Use Case</td>
-          <td class="text-center py-3 text-green-300">Live websites</td>
-          <td class="text-center py-3 text-blue-300">Development/Learning</td>
+          <td class="py-3 text-gray-300">Best For</td>
+          <td class="text-center py-3 text-cyan-300">Production sites</td>
+          <td class="text-center py-3 text-green-300">Self-hosted</td>
+          <td class="text-center py-3 text-blue-300">Development</td>
          </tr>
         </tbody>
        </table>
@@ -483,7 +535,28 @@
         </div>
         <h3 class="text-3xl font-bold text-white">Installation</h3>
        </div>
-       <p class="text-gray-300 mb-8 text-lg leading-relaxed">DownStar offers two integration methods to suit different needs:</p><!-- Production Mode -->
+       <p class="text-gray-300 mb-8 text-lg leading-relaxed">DownStar offers three integration methods to suit different needs:</p><!-- CDN Mode -->
+       <div class="mb-8">
+        <div class="flex items-center mb-4">
+         <div class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center mr-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+          </svg>
+         </div>
+         <h4 class="text-xl font-bold text-white">CDN Mode (jsDelivr)</h4><span class="ml-3 px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Fastest</span>
+        </div>
+        <div class="card-modern p-6 rounded-xl mb-4">
+         <div class="flex items-center justify-between mb-3">
+          <div class="flex space-x-2">
+           <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div><span class="text-gray-400 text-sm font-mono">Global CDN</span>
+         </div>
+         <div class="code-block border-0 bg-gray-900/50 rounded-lg"><code class="text-cyan-300">&lt;script src="https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
+         </div>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">Global CDN delivery with automatic updates - fastest loading, global edge caching, version control support.</p>
+       </div><!-- Production Mode -->
        <div class="mb-8">
         <div class="flex items-center mb-4">
          <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
@@ -597,7 +670,37 @@
         </div>
         <h3 class="text-3xl font-bold text-white">Usage Examples</h3>
        </div>
-       <p class="text-gray-300 mb-8 text-lg leading-relaxed">Here are complete examples using both integration methods:</p><!-- Production Mode Example -->
+       <p class="text-gray-300 mb-8 text-lg leading-relaxed">Here are complete examples using all three integration methods:</p><!-- CDN Mode Example -->
+       <div class="mb-8">
+        <div class="flex items-center mb-4">
+         <div class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center mr-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+          </svg>
+         </div>
+         <h4 class="text-xl font-bold text-white">CDN Mode Example (Recommended)</h4>
+        </div>
+        <div class="card-modern p-6 rounded-xl mb-4">
+         <div class="flex items-center justify-between mb-4">
+          <div class="flex space-x-2">
+           <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div><span class="text-gray-400 text-sm font-mono">cdn.html</span>
+         </div>
+         <div class="code-block border-0 bg-gray-900/50 rounded-lg"><code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
+            &lt;html&gt;<br>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;script src="<span class="text-cyan-400">https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js</span>"&gt;&lt;/script&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body&gt;<br>
+            &nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">Toast.show('Hello from CDN! ⚡')</span>"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Show Toast<br>
+            &nbsp;&nbsp;&lt;/button&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;</code>
+         </div>
+        </div>
+       </div><!-- Production Mode Example -->
        <div class="mb-8">
         <div class="flex items-center mb-4">
          <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
@@ -937,5 +1040,5 @@
             }
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9968c48e33253a37',t:'MTc2MTgwNDgxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99699619132d6ed1',t:'MTc2MTgxMzQwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
