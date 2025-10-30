@@ -95,12 +95,6 @@ DownStar is hosted via GitHub Pages (user page: `https://axshul.github.io/DownSt
 | Production | `https://axshul.github.io/DownStar/toast/Toast.bundle.js` | Single-file bundle hosted on GitHub Pages — optimized for production use. |
 | CDN (jsDelivr) | `https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js` | Fast, globally cached delivery via jsDelivr — recommended for public sites. |
 
-### ✅ Why use jsDelivr?
-
-- No sign-up required — any public GitHub repo can be served via jsDelivr.
-- Global caching and fast edge delivery.
-- Supports versioned URLs (ideal for immutable releases) and `@latest` for auto-updating.
-
 ### jsDelivr URL formats (examples)
 
 - Latest (auto-updating):
