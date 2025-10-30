@@ -1,11 +1,11 @@
-<!DOCTYPE DOCTYPE html>
+<!doctype doctype>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DownStar - Modular Web Library Hosting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DownStar - Modular Web Library Hosting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
         body {
             box-sizing: border-box;
         }
@@ -116,806 +116,611 @@
             }
         }
     </style>
-</head>
-<body class="bg-black text-white">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 glassmorphism z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 rounded-xl flex items-center justify-center glow-effect">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <span class="text-2xl font-black bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">DownStar</span>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-white font-semibold transition-all duration-300">Home</a>
-                    <a href="#features" class="nav-link text-gray-300 hover:text-white font-semibold transition-all duration-300">Features</a>
-                    <a href="#docs" class="nav-link text-gray-300 hover:text-white font-semibold transition-all duration-300">Docs</a>
-                    <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 font-semibold">
-                        <span>GitHub</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-                <button id="mobileMenuBtn" class="md:hidden p-2 text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-black text-white"><!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 glassmorphism z-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+     <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 rounded-xl flex items-center justify-center glow-effect">
+       <svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+       </svg>
+      </div><span class="text-2xl font-black bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">DownStar</span>
+     </div>
+     <div class="hidden md:flex items-center space-x-8"><a href="#home" class="nav-link text-gray-300 hover:text-white font-semibold transition-all duration-300">Home</a> <a href="#features" class="nav-link text-gray-300 hover:text-white font-semibold transition-all duration-300">Features</a> <a href="#docs" class="nav-link text-gray-300 hover:text-white font-semibold transition-all duration-300">Docs</a> <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 font-semibold"> <span>GitHub</span>
+       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+       </svg></a>
+     </div><button id="mobileMenuBtn" class="md:hidden p-2 text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg></button>
+    </div>
+   </div><!-- Mobile Menu -->
+   <div id="mobileMenu" class="hidden md:hidden glassmorphism border-t border-white/10">
+    <div class="px-4 py-6 space-y-4"><a href="#home" class="block text-gray-300 hover:text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/5 transition-all duration-300">Home</a> <a href="#features" class="block text-gray-300 hover:text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/5 transition-all duration-300">Features</a> <a href="#docs" class="block text-gray-300 hover:text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/5 transition-all duration-300">Docs</a> <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="block bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-6 py-3 rounded-full text-center font-semibold shadow-lg">GitHub →</a>
+    </div>
+   </div>
+  </nav><!-- Hero Section -->
+  <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 gradient-bg relative">
+   <div class="max-w-7xl mx-auto text-center relative z-10">
+    <div class="inline-flex items-center space-x-2 mb-6 px-6 py-3 glassmorphism rounded-full text-white text-sm font-semibold floating-element">
+     <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L13.09 8.26L22 9L17 14L18 22L12 19L6 22L7 14L2 9L10.91 8.26L12 2Z" />
+     </svg><span>Free &amp; Open Source</span>
+    </div>
+    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight"><span class="bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">Modular Libraries,</span><br><span class="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">One Line of Code</span></h1>
+    <p class="text-xl sm:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed font-light">DownStar is a free, modular, web-based library hosting system that lets developers easily plug functional modules into their projects using a single script tag.</p>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center"><a href="#docs" class="group w-full sm:w-auto bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"> <span class="flex items-center justify-center space-x-2"> <span>Get Started</span>
+       <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+       </svg></span> </a> <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto glassmorphism text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105"> <span class="flex items-center justify-center space-x-2"> <span>View on GitHub</span>
+       <svg class="w-5 h-5 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+       </svg></span> </a>
+    </div>
+   </div><!-- Floating decorative elements -->
+   <div class="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-xl floating-element"></div>
+   <div class="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full blur-xl floating-element" style="animation-delay: -2s;"></div>
+   <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-xl floating-element" style="animation-delay: -4s;"></div>
+  </section><!-- Quick Start -->
+  <section class="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+   <div class="max-w-7xl mx-auto relative z-10">
+    <div class="text-center mb-16">
+     <h2 class="text-4xl sm:text-5xl font-black mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">Two Ways to Integrate</h2>
+     <p class="text-gray-300 text-xl font-light">Choose the method that fits your needs - production or development</p>
+    </div><!-- Visual Diagrams Section -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-12"><!-- Production Mode -->
+     <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-green-500">
+      <div class="flex items-center mb-6">
+       <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <div>
+        <h3 class="text-2xl font-bold text-white">Production Mode</h3>
+        <p class="text-green-400 text-sm font-semibold">Single Bundle Architecture</p>
+       </div>
+      </div><!-- Production Mode Visual Placeholder -->
+      <div class="mb-8 p-6 bg-gradient-to-br from-green-500/5 to-green-600/5 rounded-xl border border-green-500/20">
+       <div class="w-full h-64 bg-gray-800/50 rounded-lg flex items-center justify-center relative overflow-hidden"><!-- Placeholder for Production-Mode_Visual.svg -->
+        <div class="absolute inset-0 flex items-center justify-center"><img src="src/Production-Mode_Visual.svg" alt="Production Mode Architecture Diagram" class="w-full h-full object-contain p-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        </div><!-- Fallback content if SVG doesn't load -->
+        <div class="text-green-400 text-center opacity-50" style="display: none;">
+         <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+         </svg>
+         <p class="text-sm font-medium">Production Mode Visual</p>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden glassmorphism border-t border-white/10">
-            <div class="px-4 py-6 space-y-4">
-                <a href="#home" class="block text-gray-300 hover:text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/5 transition-all duration-300">Home</a>
-                <a href="#features" class="block text-gray-300 hover:text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/5 transition-all duration-300">Features</a>
-                <a href="#docs" class="block text-gray-300 hover:text-white font-semibold py-3 px-4 rounded-xl hover:bg-white/5 transition-all duration-300">Docs</a>
-                <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="block bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-6 py-3 rounded-full text-center font-semibold shadow-lg">GitHub →</a>
-            </div>
+       </div>
+      </div>
+      <div class="mb-6">
+       <div class="flex items-center justify-between mb-3">
+        <div class="flex space-x-2">
+         <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+         <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div><span class="text-gray-400 text-sm font-mono">Single Bundle</span>
+       </div>
+       <div class="code-block border-0 bg-gray-900/50 rounded-lg text-sm"><code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
+       </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3 mb-6">
+       <div class="flex items-center space-x-2 text-green-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Faster loading</span>
+       </div>
+       <div class="flex items-center space-x-2 text-green-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Single request</span>
+       </div>
+       <div class="flex items-center space-x-2 text-green-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Optimized</span>
+       </div>
+       <div class="flex items-center space-x-2 text-green-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Minified</span>
+       </div>
+      </div>
+      <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+       <p class="text-green-300 text-sm font-medium">Perfect for live websites and production environments</p>
+      </div>
+     </div><!-- Developer Mode -->
+     <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-blue-500">
+      <div class="flex items-center mb-6">
+       <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+       </div>
+       <div>
+        <h3 class="text-2xl font-bold text-white">Developer Mode</h3>
+        <p class="text-blue-400 text-sm font-semibold">Modular Architecture</p>
+       </div>
+      </div><!-- Developer Mode Visual Placeholder -->
+      <div class="mb-8 p-6 bg-gradient-to-br from-blue-500/5 to-blue-600/5 rounded-xl border border-blue-500/20">
+       <div class="w-full h-64 bg-gray-800/50 rounded-lg flex items-center justify-center relative overflow-hidden"><!-- Placeholder for DEV_FINALVisual.svg -->
+        <div class="absolute inset-0 flex items-center justify-center"><img src="src/DEV_FINALVisual.svg" alt="Developer Mode Architecture Diagram" class="w-full h-full object-contain p-4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        </div><!-- Fallback content if SVG doesn't load -->
+        <div class="text-blue-400 text-center opacity-50" style="display: none;">
+         <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1z" />
+         </svg>
+         <p class="text-sm font-medium">Developer Mode Visual</p>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 gradient-bg relative">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center space-x-2 mb-6 px-6 py-3 glassmorphism rounded-full text-white text-sm font-semibold floating-element">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L13.09 8.26L22 9L17 14L18 22L12 19L6 22L7 14L2 9L10.91 8.26L12 2Z"/>
-                </svg>
-                <span>Free & Open Source</span>
-            </div>
-            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight">
-                <span class="bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">Modular Libraries,</span><br/>
-                <span class="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">One Line of Code</span>
-            </h1>
-            <p class="text-xl sm:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-                DownStar is a free, modular, web-based library hosting system that lets developers easily plug functional modules into their projects using a single script tag.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <a href="#docs" class="group w-full sm:w-auto bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105">
-                    <span class="flex items-center justify-center space-x-2">
-                        <span>Get Started</span>
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                    </span>
-                </a>
-                <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto glassmorphism text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
-                    <span class="flex items-center justify-center space-x-2">
-                        <span>View on GitHub</span>
-                        <svg class="w-5 h-5 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </span>
-                </a>
-            </div>
+       </div>
+      </div>
+      <div class="mb-6">
+       <div class="flex items-center justify-between mb-3">
+        <div class="flex space-x-2">
+         <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+         <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div><span class="text-gray-400 text-sm font-mono">Modular Loading</span>
+       </div>
+       <div class="code-block border-0 bg-gray-900/50 rounded-lg text-sm"><code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Call.js"&gt;&lt;/script&gt;</code>
+       </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3 mb-6">
+       <div class="flex items-center space-x-2 text-blue-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Separate files</span>
+       </div>
+       <div class="flex items-center space-x-2 text-blue-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Easy to modify</span>
+       </div>
+       <div class="flex items-center space-x-2 text-blue-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Great for learning</span>
+       </div>
+       <div class="flex items-center space-x-2 text-blue-300 text-sm">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg><span>Perfect for contributing</span>
+       </div>
+      </div>
+      <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+       <p class="text-blue-300 text-sm font-medium">Ideal for development, learning, and customization</p>
+      </div>
+     </div>
+    </div>
+    <div class="text-center mt-12">
+     <div class="inline-flex items-center space-x-2 px-6 py-3 glassmorphism rounded-full text-sm text-purple-300">
+      <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg><span>Both methods work identically - choose what fits your workflow!</span>
+     </div>
+    </div>
+   </div><!-- Background decoration -->
+   <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl"></div>
+   <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
+  </section><!-- Architecture Section -->
+  <section class="section-padding bg-gradient-to-br from-black via-gray-900 to-black">
+   <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+     <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Hybrid Architecture</h2>
+     <p class="text-gray-300 text-lg">Best of both worlds - performance and flexibility</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"><!-- Architecture Diagram -->
+     <div class="card-modern p-8 rounded-2xl">
+      <h3 class="text-2xl font-bold text-white mb-6 text-center">Module Structure</h3>
+      <div class="space-y-4">
+       <div class="flex items-center p-4 bg-gradient-to-r from-purple-500/10 to-purple-600/10 rounded-xl border border-purple-500/20">
+        <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+         </svg>
         </div>
-        
-        <!-- Floating decorative elements -->
-        <div class="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-xl floating-element"></div>
-        <div class="absolute top-40 right-20 w-32 h-32 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full blur-xl floating-element" style="animation-delay: -2s;"></div>
-        <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-xl floating-element" style="animation-delay: -4s;"></div>
-    </section>
-
-    <!-- Quick Start -->
-    <section class="section-padding bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-black mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">Two Ways to Integrate</h2>
-                <p class="text-gray-300 text-xl font-light">Choose the method that fits your needs - production or development</p>
-            </div>
-            
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Production Mode -->
-                <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-green-500">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white">Production Mode</h3>
-                            <p class="text-green-400 text-sm font-semibold">Recommended for End Users</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex space-x-2">
-                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                            </div>
-                            <span class="text-gray-400 text-sm font-mono">Single Bundle</span>
-                        </div>
-                        <div class="code-block border-0 bg-gray-900/50 rounded-lg text-sm">
-                            <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-3 mb-6">
-                        <div class="flex items-center space-x-2 text-green-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Faster loading</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-green-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Single request</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-green-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Optimized</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-green-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Minified</span>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
-                        <p class="text-green-300 text-sm font-medium">Perfect for live websites and production environments</p>
-                    </div>
-                </div>
-                
-                <!-- Developer Mode -->
-                <div class="card-modern p-8 rounded-2xl shadow-2xl border-l-4 border-blue-500">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-white">Developer Mode</h3>
-                            <p class="text-blue-400 text-sm font-semibold">For Customization</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <div class="flex space-x-2">
-                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                            </div>
-                            <span class="text-gray-400 text-sm font-mono">Modular Loading</span>
-                        </div>
-                        <div class="code-block border-0 bg-gray-900/50 rounded-lg text-sm">
-                            <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Call.js"&gt;&lt;/script&gt;</code>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-3 mb-6">
-                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Separate files</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Easy to modify</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Great for learning</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-blue-300 text-sm">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Perfect for contributing</span>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
-                        <p class="text-blue-300 text-sm font-medium">Ideal for development, learning, and customization</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <div class="inline-flex items-center space-x-2 px-6 py-3 glassmorphism rounded-full text-sm text-purple-300">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                    </svg>
-                    <span>Both methods work identically - choose what fits your workflow!</span>
-                </div>
-            </div>
+        <div>
+         <div class="font-mono text-purple-300 font-semibold">
+          Logic.js
+         </div>
+         <div class="text-gray-400 text-sm">
+          Core functionality
+         </div>
         </div>
-        
-        <!-- Background decoration -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section class="section-padding bg-gradient-to-br from-black via-gray-900 to-black">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Hybrid Architecture</h2>
-                <p class="text-gray-300 text-lg">Best of both worlds - performance and flexibility</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Architecture Diagram -->
-                <div class="card-modern p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Module Structure</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center p-4 bg-gradient-to-r from-purple-500/10 to-purple-600/10 rounded-xl border border-purple-500/20">
-                            <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="font-mono text-purple-300 font-semibold">Logic.js</div>
-                                <div class="text-gray-400 text-sm">Core functionality</div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center p-4 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-xl border border-blue-500/20">
-                            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2zM9 9h6l-6-6v6zM15 9h6"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="font-mono text-blue-300 font-semibold">Styles.css</div>
-                                <div class="text-gray-400 text-sm">UI styling</div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center p-4 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-xl border border-green-500/20">
-                            <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="font-mono text-green-300 font-semibold">Call.js</div>
-                                <div class="text-gray-400 text-sm">Developer mode loader</div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center p-4 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 rounded-xl border border-yellow-500/20">
-                            <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="font-mono text-yellow-300 font-semibold">Module.bundle.js</div>
-                                <div class="text-gray-400 text-sm">Production-ready bundle</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Comparison Table -->
-                <div class="card-modern p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Why Hybrid?</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-sm">
-                            <thead>
-                                <tr class="border-b border-gray-700">
-                                    <th class="text-left py-3 text-gray-300 font-semibold">Feature</th>
-                                    <th class="text-center py-3 text-green-400 font-semibold">Production</th>
-                                    <th class="text-center py-3 text-blue-400 font-semibold">Developer</th>
-                                </tr>
-                            </thead>
-                            <tbody class="space-y-2">
-                                <tr class="border-b border-gray-800">
-                                    <td class="py-3 text-gray-300">Network Requests</td>
-                                    <td class="text-center py-3 text-green-300">Single request</td>
-                                    <td class="text-center py-3 text-blue-300">Multiple modular</td>
-                                </tr>
-                                <tr class="border-b border-gray-800">
-                                    <td class="py-3 text-gray-300">File Size</td>
-                                    <td class="text-center py-3 text-green-300">Optimized bundle</td>
-                                    <td class="text-center py-3 text-blue-300">Separated files</td>
-                                </tr>
-                                <tr class="border-b border-gray-800">
-                                    <td class="py-3 text-gray-300">Customization</td>
-                                    <td class="text-center py-3 text-green-300">Ready to use</td>
-                                    <td class="text-center py-3 text-blue-300">Fully customizable</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 text-gray-300">Use Case</td>
-                                    <td class="text-center py-3 text-green-300">Live websites</td>
-                                    <td class="text-center py-3 text-blue-300">Development/Learning</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="mt-6 p-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/20">
-                        <p class="text-purple-300 text-sm font-medium text-center">
-                            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                            </svg>
-                            Future-proof design supports automated bundling for all modules
-                        </p>
-                    </div>
-                </div>
-            </div>
+       </div>
+       <div class="flex items-center p-4 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-xl border border-blue-500/20">
+        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2zM9 9h6l-6-6v6zM15 9h6" />
+         </svg>
         </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="section-padding bg-black">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Why DownStar?</h2>
-                <p class="text-gray-300 text-lg">Built for developers who value simplicity and efficiency</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-purple-300 transition-colors">Lightning Fast</h3>
-                    <p class="text-gray-300 leading-relaxed">Optimized CDN delivery ensures your modules load instantly, keeping your site blazing fast.</p>
-                </div>
-                
-                <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors">Truly Modular</h3>
-                    <p class="text-gray-300 leading-relaxed">Pick only what you need. Each module is independent and can be used standalone.</p>
-                </div>
-                
-                <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-green-300 transition-colors">100% Free</h3>
-                    <p class="text-gray-300 leading-relaxed">Open source and free forever. No hidden costs, no premium tiers, no surprises.</p>
-                </div>
-                
-                <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 via-yellow-600 to-yellow-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2zM9 9h6l-6-6v6zM15 9h6"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-300 transition-colors">Customizable</h3>
-                    <p class="text-gray-300 leading-relaxed">Every module comes with extensive customization options to match your design.</p>
-                </div>
-                
-                <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-red-300 transition-colors">Zero Dependencies</h3>
-                    <p class="text-gray-300 leading-relaxed">Pure vanilla JavaScript. No jQuery, no React, no bloat. Just clean, efficient code.</p>
-                </div>
-                
-                <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-indigo-300 transition-colors">Developer First</h3>
-                    <p class="text-gray-300 leading-relaxed">Built by developers, for developers. Simple APIs and excellent documentation.</p>
-                </div>
-            </div>
+        <div>
+         <div class="font-mono text-blue-300 font-semibold">
+          Styles.css
+         </div>
+         <div class="text-gray-400 text-sm">
+          UI styling
+         </div>
         </div>
-    </section>
-
-    <!-- Documentation -->
-    <section id="docs" class="section-padding bg-gradient-to-br from-gray-900 to-black">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Documentation</h2>
-                <p class="text-gray-300 text-lg">Everything you need to get started with DownStar</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Sidebar -->
-                <div class="lg:col-span-1">
-                    <div class="card-modern rounded-2xl p-8 sticky top-24">
-                        <h3 class="font-bold text-xl mb-6 text-white bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Quick Links</h3>
-                        <nav class="space-y-3">
-                            <a href="#installation" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                                Installation
-                            </a>
-                            <a href="#modules" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                                Available Modules
-                            </a>
-                            <a href="#usage" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300">
-                                <span class="w-2 h-2 bg-cyan-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                                Usage Examples
-                            </a>
-                            <a href="#contributing" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300">
-                                <span class="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                                Contributing
-                            </a>
-                        </nav>
-                    </div>
-                </div>
-                
-                <!-- Content -->
-                <div class="lg:col-span-2 space-y-8">
-                    <!-- Installation -->
-                    <div id="installation" class="card-modern rounded-2xl p-10 shadow-2xl">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white">Installation</h3>
-                        </div>
-                        <p class="text-gray-300 mb-8 text-lg leading-relaxed">DownStar offers two integration methods to suit different needs:</p>
-                        
-                        <!-- Production Mode -->
-                        <div class="mb-8">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="text-xl font-bold text-white">Production Mode</h4>
-                                <span class="ml-3 px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-semibold">Recommended</span>
-                            </div>
-                            <div class="card-modern p-6 rounded-xl mb-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex space-x-2">
-                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                                    </div>
-                                    <span class="text-gray-400 text-sm font-mono">Single Bundle</span>
-                                </div>
-                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
-                                    <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 text-sm mb-4">Single-file bundle for optimal performance - faster loading, single network request, production optimized.</p>
-                        </div>
-                        
-                        <!-- Developer Mode -->
-                        <div class="mb-6">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="text-xl font-bold text-white">Developer Mode</h4>
-                                <span class="ml-3 px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">For Customization</span>
-                            </div>
-                            <div class="card-modern p-6 rounded-xl mb-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex space-x-2">
-                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                                    </div>
-                                    <span class="text-gray-400 text-sm font-mono">Modular Loading</span>
-                                </div>
-                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
-                                    <code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Call.js"&gt;&lt;/script&gt;</code>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 text-sm">Modular loading for development and customization - separate logic and styles, easy to modify, perfect for learning.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Available Modules -->
-                    <div id="modules" class="card-modern rounded-2xl p-10 shadow-2xl">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white">Available Modules</h3>
-                        </div>
-                        <p class="text-gray-300 mb-8 text-lg leading-relaxed">DownStar offers a growing collection of useful modules:</p>
-                        
-                        <div class="space-y-6">
-                            <div class="card-modern p-6 rounded-xl border-l-4 border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex items-center">
-                                        <svg class="w-6 h-6 text-purple-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                        </svg>
-                                        <h4 class="font-bold text-xl text-white">Toast Notifications</h4>
-                                    </div>
-                                    <button id="toastDemoBtn" class="px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                                        Try Demo
-                                    </button>
-                                </div>
-                                <p class="text-gray-300 mb-4 leading-relaxed">Beautiful, customizable toast notifications for user feedback with multiple styles and positions.</p>
-                                <div class="card-modern p-4 rounded-lg mb-4">
-                                    <div class="code-block border-0 bg-gray-900/50 rounded text-sm">
-                                        <code><span class="text-yellow-400">Toast</span>.<span class="text-blue-400">show</span>(<span class="text-orange-400">'Success!'</span>, <span class="text-green-400">'success'</span>);<br>
-<span class="text-yellow-400">Toast</span>.<span class="text-blue-400">error</span>(<span class="text-orange-400">'Something went wrong!'</span>);<br>
-<span class="text-yellow-400">Toast</span>.<span class="text-blue-400">warning</span>(<span class="text-orange-400">'Please check your input'</span>);</code>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Success</span>
-                                    <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-xs">Error</span>
-                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs">Warning</span>
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Info</span>
-                                </div>
-                            </div>
-                            
-                            <div class="card-modern p-6 rounded-xl border-l-4 border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex items-center">
-                                        <svg class="w-6 h-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                                        </svg>
-                                        <h4 class="font-bold text-xl text-white">Modal Dialogs</h4>
-                                    </div>
-                                    <button id="modalDemoBtn" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                                        Try Demo
-                                    </button>
-                                </div>
-                                <p class="text-gray-300 mb-4 leading-relaxed">Responsive modal dialogs with customizable content, actions, and animations.</p>
-                                <div class="card-modern p-4 rounded-lg mb-4">
-                                    <div class="code-block border-0 bg-gray-900/50 rounded text-sm">
-                                        <code><span class="text-yellow-400">Modal</span>.<span class="text-blue-400">open</span>({<br>
-&nbsp;&nbsp;<span class="text-cyan-400">title</span>: <span class="text-orange-400">'Welcome!'</span>,<br>
-&nbsp;&nbsp;<span class="text-cyan-400">content</span>: <span class="text-orange-400">'This is a modal dialog'</span>,<br>
-&nbsp;&nbsp;<span class="text-cyan-400">buttons</span>: [<span class="text-orange-400">'OK'</span>, <span class="text-orange-400">'Cancel'</span>]<br>
-});</code>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Confirm</span>
-                                    <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Alert</span>
-                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Custom</span>
-                                </div>
-                            </div>
-                            
-                            <div class="card-modern p-6 rounded-xl border-l-4 border-green-500 hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex items-center">
-                                        <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        </svg>
-                                        <h4 class="font-bold text-xl text-white">Utility Functions</h4>
-                                    </div>
-                                    <button id="utilsDemoBtn" class="px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                                        Try Demo
-                                    </button>
-                                </div>
-                                <p class="text-gray-300 mb-4 leading-relaxed">Common utility functions for everyday development tasks like debouncing, throttling, and data manipulation.</p>
-                                <div class="card-modern p-4 rounded-lg mb-4">
-                                    <div class="code-block border-0 bg-gray-900/50 rounded text-sm">
-                                        <code><span class="text-yellow-400">Utils</span>.<span class="text-blue-400">debounce</span>(<span class="text-cyan-400">fn</span>, <span class="text-orange-400">300</span>);<br>
-<span class="text-yellow-400">Utils</span>.<span class="text-blue-400">throttle</span>(<span class="text-cyan-400">fn</span>, <span class="text-orange-400">100</span>);<br>
-<span class="text-yellow-400">Utils</span>.<span class="text-blue-400">formatDate</span>(<span class="text-orange-400">new Date()</span>);</code>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Debounce</span>
-                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Throttle</span>
-                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs">Format</span>
-                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Validate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Usage Examples -->
-                    <div id="usage" class="card-modern rounded-2xl p-10 shadow-2xl">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-2xl">💻</span>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white">Usage Examples</h3>
-                        </div>
-                        <p class="text-gray-300 mb-8 text-lg leading-relaxed">Here are complete examples using both integration methods:</p>
-                        
-                        <!-- Production Mode Example -->
-                        <div class="mb-8">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="text-xl font-bold text-white">Production Mode Example</h4>
-                            </div>
-                            <div class="card-modern p-6 rounded-xl mb-4">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex space-x-2">
-                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                                    </div>
-                                    <span class="text-gray-400 text-sm font-mono">production.html</span>
-                                </div>
-                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
-                                    <code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
-&lt;html&gt;<br>
-&lt;head&gt;<br>
-&nbsp;&nbsp;&lt;script src="<span class="text-cyan-400">https://Axshul.github.io/DownStar/toast/Toast.bundle.js</span>"&gt;&lt;/script&gt;<br>
-&lt;/head&gt;<br>
-&lt;body&gt;<br>
-&nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">Toast.show('Hello from DownStar! 🚀')</span>"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Show Toast<br>
-&nbsp;&nbsp;&lt;/button&gt;<br>
-&lt;/body&gt;<br>
-&lt;/html&gt;</code>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Developer Mode Example -->
-                        <div class="mb-6">
-                            <div class="flex items-center mb-4">
-                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
-                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                </div>
-                                <h4 class="text-xl font-bold text-white">Developer Mode Example</h4>
-                            </div>
-                            <div class="card-modern p-6 rounded-xl mb-4">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex space-x-2">
-                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                                    </div>
-                                    <span class="text-gray-400 text-sm font-mono">development.html</span>
-                                </div>
-                                <div class="code-block border-0 bg-gray-900/50 rounded-lg">
-                                    <code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
-&lt;html&gt;<br>
-&lt;head&gt;<br>
-&nbsp;&nbsp;&lt;script src="<span class="text-cyan-400">https://Axshul.github.io/DownStar/toast/Call.js</span>"&gt;&lt;/script&gt;<br>
-&lt;/head&gt;<br>
-&lt;body&gt;<br>
-&nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">Toast.show('Hello, Dev Mode! 👨‍💻')</span>"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Show Toast<br>
-&nbsp;&nbsp;&lt;/button&gt;<br>
-&lt;/body&gt;<br>
-&lt;/html&gt;</code>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 text-lg">Visit the <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text hover:from-purple-300 hover:to-blue-300 font-semibold transition-all duration-300">GitHub repository</a> for more detailed examples and API documentation.</p>
-                    </div>
-                    
-                    <!-- Contributing -->
-                    <div id="contributing" class="card-modern rounded-2xl p-10 shadow-2xl">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mr-4">
-                                <span class="text-2xl">🤝</span>
-                            </div>
-                            <h3 class="text-3xl font-bold text-white">Contributing</h3>
-                        </div>
-                        <p class="text-gray-300 mb-6 text-lg leading-relaxed">DownStar is open source and we welcome contributions! Here's how you can help:</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            <div class="flex items-start p-4 card-modern rounded-xl">
-                                <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                    <span class="text-sm">🐛</span>
-                                </div>
-                                <span class="text-gray-300">Report bugs and suggest features via GitHub Issues</span>
-                            </div>
-                            <div class="flex items-start p-4 card-modern rounded-xl">
-                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                    <span class="text-sm">🔧</span>
-                                </div>
-                                <span class="text-gray-300">Submit pull requests with improvements or new modules</span>
-                            </div>
-                            <div class="flex items-start p-4 card-modern rounded-xl">
-                                <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                    <span class="text-sm">📚</span>
-                                </div>
-                                <span class="text-gray-300">Improve documentation and examples</span>
-                            </div>
-                            <div class="flex items-start p-4 card-modern rounded-xl">
-                                <div class="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                    <span class="text-sm">📢</span>
-                                </div>
-                                <span class="text-gray-300">Share DownStar with other developers</span>
-                            </div>
-                        </div>
-                        <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 font-semibold text-lg">
-                            <span>Contribute on GitHub</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+       </div>
+       <div class="flex items-center p-4 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-xl border border-green-500/20">
+        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+         </svg>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gradient-to-br from-black via-gray-900 to-black border-t border-gray-800 text-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center glow-effect">
-                            <span class="text-white font-bold text-2xl">⭐</span>
-                        </div>
-                        <span class="text-2xl font-black bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">DownStar</span>
-                    </div>
-                    <p class="text-gray-300 text-lg leading-relaxed">Modular web libraries, simplified for the modern developer.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6 text-xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Quick Links</h4>
-                    <div class="space-y-3">
-                        <a href="#home" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Home</a>
-                        <a href="#features" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Features</a>
-                        <a href="#docs" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Documentation</a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6 text-xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Community</h4>
-                    <div class="space-y-3">
-                        <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">GitHub</a>
-                        <a href="https://github.com/Axshul/DownStar/issues" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Issues</a>
-                        <a href="https://github.com/Axshul/DownStar/discussions" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Discussions</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-300 text-lg">© 2024 DownStar. Open source and free forever. Built with <span class="text-red-500 text-xl">❤️</span> for developers.</p>
-            </div>
+        <div>
+         <div class="font-mono text-green-300 font-semibold">
+          Call.js
+         </div>
+         <div class="text-gray-400 text-sm">
+          Developer mode loader
+         </div>
         </div>
-        
-        <!-- Background decoration -->
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
-    </footer>
-
-    <script>
+       </div>
+       <div class="flex items-center p-4 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 rounded-xl border border-yellow-500/20">
+        <div class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-4">
+         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+         </svg>
+        </div>
+        <div>
+         <div class="font-mono text-yellow-300 font-semibold">
+          Module.bundle.js
+         </div>
+         <div class="text-gray-400 text-sm">
+          Production-ready bundle
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Comparison Table -->
+     <div class="card-modern p-8 rounded-2xl">
+      <h3 class="text-2xl font-bold text-white mb-6 text-center">Why Hybrid?</h3>
+      <div class="overflow-x-auto">
+       <table class="w-full text-sm">
+        <thead>
+         <tr class="border-b border-gray-700">
+          <th class="text-left py-3 text-gray-300 font-semibold">Feature</th>
+          <th class="text-center py-3 text-green-400 font-semibold">Production</th>
+          <th class="text-center py-3 text-blue-400 font-semibold">Developer</th>
+         </tr>
+        </thead>
+        <tbody class="space-y-2">
+         <tr class="border-b border-gray-800">
+          <td class="py-3 text-gray-300">Network Requests</td>
+          <td class="text-center py-3 text-green-300">Single request</td>
+          <td class="text-center py-3 text-blue-300">Multiple modular</td>
+         </tr>
+         <tr class="border-b border-gray-800">
+          <td class="py-3 text-gray-300">File Size</td>
+          <td class="text-center py-3 text-green-300">Optimized bundle</td>
+          <td class="text-center py-3 text-blue-300">Separated files</td>
+         </tr>
+         <tr class="border-b border-gray-800">
+          <td class="py-3 text-gray-300">Customization</td>
+          <td class="text-center py-3 text-green-300">Ready to use</td>
+          <td class="text-center py-3 text-blue-300">Fully customizable</td>
+         </tr>
+         <tr>
+          <td class="py-3 text-gray-300">Use Case</td>
+          <td class="text-center py-3 text-green-300">Live websites</td>
+          <td class="text-center py-3 text-blue-300">Development/Learning</td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div class="mt-6 p-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg border border-purple-500/20">
+       <p class="text-purple-300 text-sm font-medium text-center">
+        <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg> Future-proof design supports automated bundling for all modules</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Features -->
+  <section id="features" class="section-padding bg-black">
+   <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+     <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Why DownStar?</h2>
+     <p class="text-gray-300 text-lg">Built for developers who value simplicity and efficiency</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-2">
+      <div class="w-16 h-16 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-purple-300 transition-colors">Lightning Fast</h3>
+      <p class="text-gray-300 leading-relaxed">Optimized CDN delivery ensures your modules load instantly, keeping your site blazing fast.</p>
+     </div>
+     <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2">
+      <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors">Truly Modular</h3>
+      <p class="text-gray-300 leading-relaxed">Pick only what you need. Each module is independent and can be used standalone.</p>
+     </div>
+     <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 hover:-translate-y-2">
+      <div class="w-16 h-16 bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-green-300 transition-colors">100% Free</h3>
+      <p class="text-gray-300 leading-relaxed">Open source and free forever. No hidden costs, no premium tiers, no surprises.</p>
+     </div>
+     <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-500 hover:-translate-y-2">
+      <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 via-yellow-600 to-yellow-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2zM9 9h6l-6-6v6zM15 9h6" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-yellow-300 transition-colors">Customizable</h3>
+      <p class="text-gray-300 leading-relaxed">Every module comes with extensive customization options to match your design.</p>
+     </div>
+     <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 hover:-translate-y-2">
+      <div class="w-16 h-16 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-red-300 transition-colors">Zero Dependencies</h3>
+      <p class="text-gray-300 leading-relaxed">Pure vanilla JavaScript. No jQuery, no React, no bloat. Just clean, efficient code.</p>
+     </div>
+     <div class="group feature-card card-modern p-8 rounded-2xl hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 hover:-translate-y-2">
+      <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+       <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+       </svg>
+      </div>
+      <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-indigo-300 transition-colors">Developer First</h3>
+      <p class="text-gray-300 leading-relaxed">Built by developers, for developers. Simple APIs and excellent documentation.</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Documentation -->
+  <section id="docs" class="section-padding bg-gradient-to-br from-gray-900 to-black">
+   <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+     <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Documentation</h2>
+     <p class="text-gray-300 text-lg">Everything you need to get started with DownStar</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8"><!-- Sidebar -->
+     <div class="lg:col-span-1">
+      <div class="card-modern rounded-2xl p-8 sticky top-24">
+       <h3 class="font-bold text-xl mb-6 text-white bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Quick Links</h3>
+       <nav class="space-y-3"><a href="#installation" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300"> <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span> Installation </a> <a href="#modules" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300"> <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span> Available Modules </a> <a href="#usage" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300"> <span class="w-2 h-2 bg-cyan-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span> Usage Examples </a> <a href="#contributing" class="group flex items-center text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-blue-500/10 transition-all duration-300"> <span class="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span> Contributing </a>
+       </nav>
+      </div>
+     </div><!-- Content -->
+     <div class="lg:col-span-2 space-y-8"><!-- Installation -->
+      <div id="installation" class="card-modern rounded-2xl p-10 shadow-2xl">
+       <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mr-4">
+         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+         </svg>
+        </div>
+        <h3 class="text-3xl font-bold text-white">Installation</h3>
+       </div>
+       <p class="text-gray-300 mb-8 text-lg leading-relaxed">DownStar offers two integration methods to suit different needs:</p><!-- Production Mode -->
+       <div class="mb-8">
+        <div class="flex items-center mb-4">
+         <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+         </div>
+         <h4 class="text-xl font-bold text-white">Production Mode</h4><span class="ml-3 px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-semibold">Recommended</span>
+        </div>
+        <div class="card-modern p-6 rounded-xl mb-4">
+         <div class="flex items-center justify-between mb-3">
+          <div class="flex space-x-2">
+           <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div><span class="text-gray-400 text-sm font-mono">Single Bundle</span>
+         </div>
+         <div class="code-block border-0 bg-gray-900/50 rounded-lg"><code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Toast.bundle.js"&gt;&lt;/script&gt;</code>
+         </div>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">Single-file bundle for optimal performance - faster loading, single network request, production optimized.</p>
+       </div><!-- Developer Mode -->
+       <div class="mb-6">
+        <div class="flex items-center mb-4">
+         <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+         </div>
+         <h4 class="text-xl font-bold text-white">Developer Mode</h4><span class="ml-3 px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">For Customization</span>
+        </div>
+        <div class="card-modern p-6 rounded-xl mb-4">
+         <div class="flex items-center justify-between mb-3">
+          <div class="flex space-x-2">
+           <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div><span class="text-gray-400 text-sm font-mono">Modular Loading</span>
+         </div>
+         <div class="code-block border-0 bg-gray-900/50 rounded-lg"><code class="text-cyan-300">&lt;script src="https://Axshul.github.io/DownStar/toast/Call.js"&gt;&lt;/script&gt;</code>
+         </div>
+        </div>
+        <p class="text-gray-300 text-sm">Modular loading for development and customization - separate logic and styles, easy to modify, perfect for learning.</p>
+       </div>
+      </div><!-- Available Modules -->
+      <div id="modules" class="card-modern rounded-2xl p-10 shadow-2xl">
+       <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mr-4">
+         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+         </svg>
+        </div>
+        <h3 class="text-3xl font-bold text-white">Available Modules</h3>
+       </div>
+       <p class="text-gray-300 mb-8 text-lg leading-relaxed">DownStar offers a growing collection of useful modules:</p>
+       <div class="space-y-6">
+        <div class="card-modern p-6 rounded-xl border-l-4 border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300">
+         <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+           <svg class="w-6 h-6 text-purple-400 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+           </svg>
+           <h4 class="font-bold text-xl text-white">Toast Notifications</h4>
+          </div><button id="toastDemoBtn" class="px-4 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105"> Try Demo </button>
+         </div>
+         <p class="text-gray-300 mb-4 leading-relaxed">Beautiful, customizable toast notifications for user feedback with multiple styles and positions.</p>
+         <div class="card-modern p-4 rounded-lg mb-4">
+          <div class="code-block border-0 bg-gray-900/50 rounded text-sm"><code><span class="text-yellow-400">Toast</span>.<span class="text-blue-400">show</span>(<span class="text-orange-400">'Success!'</span>, <span class="text-green-400">'success'</span>);<br><span class="text-yellow-400">Toast</span>.<span class="text-blue-400">error</span>(<span class="text-orange-400">'Something went wrong!'</span>);<br><span class="text-yellow-400">Toast</span>.<span class="text-blue-400">warning</span>(<span class="text-orange-400">'Please check your input'</span>);</code>
+          </div>
+         </div>
+         <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Success</span> <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-xs">Error</span> <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs">Warning</span> <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Info</span>
+         </div>
+        </div>
+        <div class="card-modern p-6 rounded-xl border-l-4 border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
+         <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+           <svg class="w-6 h-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+           </svg>
+           <h4 class="font-bold text-xl text-white">Modal Dialogs</h4>
+          </div><button id="modalDemoBtn" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105"> Try Demo </button>
+         </div>
+         <p class="text-gray-300 mb-4 leading-relaxed">Responsive modal dialogs with customizable content, actions, and animations.</p>
+         <div class="card-modern p-4 rounded-lg mb-4">
+          <div class="code-block border-0 bg-gray-900/50 rounded text-sm"><code><span class="text-yellow-400">Modal</span>.<span class="text-blue-400">open</span>({<br>
+             &nbsp;&nbsp;<span class="text-cyan-400">title</span>: <span class="text-orange-400">'Welcome!'</span>,<br>
+             &nbsp;&nbsp;<span class="text-cyan-400">content</span>: <span class="text-orange-400">'This is a modal dialog'</span>,<br>
+             &nbsp;&nbsp;<span class="text-cyan-400">buttons</span>: [<span class="text-orange-400">'OK'</span>, <span class="text-orange-400">'Cancel'</span>]<br>
+             });</code>
+          </div>
+         </div>
+         <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Confirm</span> <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Alert</span> <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Custom</span>
+         </div>
+        </div>
+        <div class="card-modern p-6 rounded-xl border-l-4 border-green-500 hover:shadow-lg hover:shadow-green-500/20 transition-all duration-300">
+         <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+           <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+           </svg>
+           <h4 class="font-bold text-xl text-white">Utility Functions</h4>
+          </div><button id="utilsDemoBtn" class="px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105"> Try Demo </button>
+         </div>
+         <p class="text-gray-300 mb-4 leading-relaxed">Common utility functions for everyday development tasks like debouncing, throttling, and data manipulation.</p>
+         <div class="card-modern p-4 rounded-lg mb-4">
+          <div class="code-block border-0 bg-gray-900/50 rounded text-sm"><code><span class="text-yellow-400">Utils</span>.<span class="text-blue-400">debounce</span>(<span class="text-cyan-400">fn</span>, <span class="text-orange-400">300</span>);<br><span class="text-yellow-400">Utils</span>.<span class="text-blue-400">throttle</span>(<span class="text-cyan-400">fn</span>, <span class="text-orange-400">100</span>);<br><span class="text-yellow-400">Utils</span>.<span class="text-blue-400">formatDate</span>(<span class="text-orange-400">new Date()</span>);</code>
+          </div>
+         </div>
+         <div class="flex flex-wrap gap-2"><span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Debounce</span> <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">Throttle</span> <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs">Format</span> <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">Validate</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Usage Examples -->
+      <div id="usage" class="card-modern rounded-2xl p-10 shadow-2xl">
+       <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl flex items-center justify-center mr-4"><span class="text-2xl">💻</span>
+        </div>
+        <h3 class="text-3xl font-bold text-white">Usage Examples</h3>
+       </div>
+       <p class="text-gray-300 mb-8 text-lg leading-relaxed">Here are complete examples using both integration methods:</p><!-- Production Mode Example -->
+       <div class="mb-8">
+        <div class="flex items-center mb-4">
+         <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+         </div>
+         <h4 class="text-xl font-bold text-white">Production Mode Example</h4>
+        </div>
+        <div class="card-modern p-6 rounded-xl mb-4">
+         <div class="flex items-center justify-between mb-4">
+          <div class="flex space-x-2">
+           <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div><span class="text-gray-400 text-sm font-mono">production.html</span>
+         </div>
+         <div class="code-block border-0 bg-gray-900/50 rounded-lg"><code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
+            &lt;html&gt;<br>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;script src="<span class="text-cyan-400">https://Axshul.github.io/DownStar/toast/Toast.bundle.js</span>"&gt;&lt;/script&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body&gt;<br>
+            &nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">Toast.show('Hello from DownStar! 🚀')</span>"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Show Toast<br>
+            &nbsp;&nbsp;&lt;/button&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;</code>
+         </div>
+        </div>
+       </div><!-- Developer Mode Example -->
+       <div class="mb-6">
+        <div class="flex items-center mb-4">
+         <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+         </div>
+         <h4 class="text-xl font-bold text-white">Developer Mode Example</h4>
+        </div>
+        <div class="card-modern p-6 rounded-xl mb-4">
+         <div class="flex items-center justify-between mb-4">
+          <div class="flex space-x-2">
+           <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+           <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div><span class="text-gray-400 text-sm font-mono">development.html</span>
+         </div>
+         <div class="code-block border-0 bg-gray-900/50 rounded-lg"><code class="text-gray-300">&lt;!DOCTYPE html&gt;<br>
+            &lt;html&gt;<br>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&lt;script src="<span class="text-cyan-400">https://Axshul.github.io/DownStar/toast/Call.js</span>"&gt;&lt;/script&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body&gt;<br>
+            &nbsp;&nbsp;&lt;button onclick="<span class="text-green-400">Toast.show('Hello, Dev Mode! 👨‍💻')</span>"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Show Toast<br>
+            &nbsp;&nbsp;&lt;/button&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;</code>
+         </div>
+        </div>
+       </div>
+       <p class="text-gray-300 text-lg">Visit the <a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text hover:from-purple-300 hover:to-blue-300 font-semibold transition-all duration-300">GitHub repository</a> for more detailed examples and API documentation.</p>
+      </div><!-- Contributing -->
+      <div id="contributing" class="card-modern rounded-2xl p-10 shadow-2xl">
+       <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mr-4"><span class="text-2xl">🤝</span>
+        </div>
+        <h3 class="text-3xl font-bold text-white">Contributing</h3>
+       </div>
+       <p class="text-gray-300 mb-6 text-lg leading-relaxed">DownStar is open source and we welcome contributions! Here's how you can help:</p>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div class="flex items-start p-4 card-modern rounded-xl">
+         <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"><span class="text-sm">🐛</span>
+         </div><span class="text-gray-300">Report bugs and suggest features via GitHub Issues</span>
+        </div>
+        <div class="flex items-start p-4 card-modern rounded-xl">
+         <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"><span class="text-sm">🔧</span>
+         </div><span class="text-gray-300">Submit pull requests with improvements or new modules</span>
+        </div>
+        <div class="flex items-start p-4 card-modern rounded-xl">
+         <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"><span class="text-sm">📚</span>
+         </div><span class="text-gray-300">Improve documentation and examples</span>
+        </div>
+        <div class="flex items-start p-4 card-modern rounded-xl">
+         <div class="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"><span class="text-sm">📢</span>
+         </div><span class="text-gray-300">Share DownStar with other developers</span>
+        </div>
+       </div><a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 font-semibold text-lg"> <span>Contribute on GitHub</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg></a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="bg-gradient-to-br from-black via-gray-900 to-black border-t border-gray-800 text-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+   <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+     <div>
+      <div class="flex items-center space-x-3 mb-6">
+       <div class="w-12 h-12 bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center glow-effect"><span class="text-white font-bold text-2xl">⭐</span>
+       </div><span class="text-2xl font-black bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">DownStar</span>
+      </div>
+      <p class="text-gray-300 text-lg leading-relaxed">Modular web libraries, simplified for the modern developer.</p>
+     </div>
+     <div>
+      <h4 class="font-bold mb-6 text-xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Quick Links</h4>
+      <div class="space-y-3"><a href="#home" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Home</a> <a href="#features" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Features</a> <a href="#docs" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Documentation</a>
+      </div>
+     </div>
+     <div>
+      <h4 class="font-bold mb-6 text-xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Community</h4>
+      <div class="space-y-3"><a href="https://github.com/Axshul/DownStar" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">GitHub</a> <a href="https://github.com/Axshul/DownStar/issues" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Issues</a> <a href="https://github.com/Axshul/DownStar/discussions" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2">Discussions</a>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8 text-center">
+     <p class="text-gray-300 text-lg">© 2024 DownStar. Open source and free forever. Built with <span class="text-red-500 text-xl">❤️</span> for developers.</p>
+    </div>
+   </div><!-- Background decoration -->
+   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+   <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl"></div>
+  </footer>
+  <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1132,5 +937,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99642e6f52823a37',t:'MTc2MTc1NjcyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9968c48e33253a37',t:'MTc2MTgwNDgxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
