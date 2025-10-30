@@ -1,159 +1,248 @@
 /*!
- * DownStar Toast.bundle.js v1.0.0
+ * DownStar Toast.bundle.js v1.0.0 (FIXED)
  * Author: Axshul (https://github.com/Axshul)
  * Description: Production-ready, self-contained toast notification system.
+ * Fix: Harmonized with Logic.js and Styles.css (modular versions).
  */
 
 (() => {
-  // Prevent reinitialization
+  // Prevent reinitialization and check for existing instance
   if (window.Toast && window.Toast.__ready) return;
 
-  // DOM Ready Helper
-  const onReady = (fn) => {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      fn();
-    }
-  };
-
-  // CSS Styles (inline)
+  // --- 1. CSS Styles (from Styles.css) ---
   const css = `
+  /**
+   * DownStar Toast Module — Styles.css
+   */
+
   :root {
-    --toast-font: system-ui, sans-serif;
-    --toast-radius: 8px;
-    --toast-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    --toast-bg: rgba(20, 20, 20, 0.95);
-    --toast-color: #fff;
-    --toast-success-bg: #22c55e;
-    --toast-error-bg: #ef4444;
-    --toast-info-bg: #3b82f6;
-    --toast-duration: 4000ms;
+    --toast-bg-dark: #1c1c1e;
+    --toast-bg-light: #ffffff;
+    --toast-bg-success: #2ecc71;
+    --toast-bg-error: #e74c3c;
+    --toast-bg-warning: #f1c40f;
+    --toast-bg-info: #3498db;
+    --toast-color-dark: #fff;
+    --toast-color-light: #111;
+    --toast-radius: 10px;
+    --toast-padding: 0.8rem 1.2rem;
+    --toast-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   }
 
-  .toast-container {
+  .downstar-toast-container {
     position: fixed;
-    z-index: 9999;
     display: flex;
     flex-direction: column;
+    z-index: 9999;
     gap: 10px;
-    max-width: 350px;
-    right: 20px;
-    bottom: 20px;
     pointer-events: none;
   }
 
-  .toast {
-    pointer-events: auto;
-    background: var(--toast-bg);
-    color: var(--toast-color);
-    padding: 14px 18px;
+  .downstar-toast-container.top-right {
+    top: var(--offset-y);
+    right: var(--offset-x);
+    align-items: flex-end;
+  }
+
+  .downstar-toast-container.top-left {
+    top: var(--offset-y);
+    left: var(--offset-x);
+    align-items: flex-start;
+  }
+
+  .downstar-toast-container.bottom-right {
+    bottom: var(--offset-y);
+    right: var(--offset-x);
+    align-items: flex-end;
+  }
+
+  .downstar-toast-container.bottom-left {
+    bottom: var(--offset-y);
+    left: var(--offset-x);
+    align-items: flex-start;
+  }
+
+  .downstar-toast {
+    pointer-events: all;
+    min-width: 250px;
+    max-width: 400px;
+    color: var(--toast-color-dark);
     border-radius: var(--toast-radius);
+    padding: var(--toast-padding);
     box-shadow: var(--toast-shadow);
-    font-family: var(--toast-font);
-    transform: translateY(25px);
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
     opacity: 0;
-    transition: all 0.35s ease;
+    transform: translateY(20px);
+    animation: toastSlideIn 0.4s ease forwards;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .toast.show {
-    transform: translateY(0);
-    opacity: 1;
+  .downstar-toast.success { background: var(--toast-bg-success); }
+  .downstar-toast.error { background: var(--toast-bg-error); }
+  .downstar-toast.warning { background: var(--toast-bg-warning); color: var(--toast-color-light); }
+  .downstar-toast.info { background: var(--toast-bg-info); }
+  .downstar-toast.default {
+    background: var(--toast-bg-dark);
+    color: var(--toast-color-dark);
   }
 
-  .toast.success { background: var(--toast-success-bg); }
-  .toast.error { background: var(--toast-error-bg); }
-  .toast.info { background: var(--toast-info-bg); }
+  .downstar-toast-container.light .downstar-toast.default {
+    background: var(--toast-bg-light);
+    color: var(--toast-color-light);
+  }
 
   .toast-close {
-    float: right;
-    margin-left: 12px;
-    font-weight: bold;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
     cursor: pointer;
+    padding: 0 0.3rem;
+    line-height: 1;
+    transition: opacity 0.2s ease;
+    margin-left: 12px; /* Added for spacing */
+    float: right;
+  }
+
+  .toast-close:hover { opacity: 0.6; }
+
+  .hide {
+    animation: toastSlideOut 0.3s ease forwards;
+  }
+
+  @keyframes toastSlideIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes toastSlideOut {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to { opacity: 0; transform: translateY(10px) scale(0.9); }
   }
   `;
 
-  // Toast Core Logic
-  const Toast = {
-    __ready: false,
-    config: {
-      duration: 4000,
-      position: "bottom-right",
-      max: 5,
-      closeButton: true,
-    },
-    _container: null,
-    _toasts: [],
+  // --- 2. DownStar Toast Core Logic (from Logic.js) ---
 
-    _init() {
-      if (this.__ready) return;
-      this.__ready = true;
+  const defaultConfig = {
+    position: "top-right",
+    duration: 4000,
+    maxToasts: 5,
+    newestOnTop: true,
+    pauseOnHover: true,
+    showClose: true,
+    animation: "slide",
+    theme: "dark",
+    offsetX: "20px",
+    offsetY: "20px",
+  };
 
-      // Inject CSS
+  let config = { ...defaultConfig };
+  let container;
+  let __ready = false; // Internal flag for bundle
+
+  function createContainer() {
+    if (container) return container;
+
+    // Inject CSS once
+    if (!__ready) {
       const style = document.createElement("style");
       style.textContent = css;
       document.head.appendChild(style);
+      __ready = true;
+    }
 
-      // Create container
-      this._container = document.createElement("div");
-      this._container.className = "toast-container";
-      document.body.appendChild(this._container);
+    container = document.createElement("div");
+    container.id = "downstar-toast-container";
+    updateContainerPosition();
+    document.body.appendChild(container);
+    return container;
+  }
+
+  function updateContainerPosition() {
+    if (!container) return;
+    container.className = `downstar-toast-container ${config.position} ${config.theme}`;
+    container.style.setProperty("--offset-x", config.offsetX);
+    container.style.setProperty("--offset-y", config.offsetY);
+  }
+
+  function removeToast(toast) {
+    toast.classList.add("hide");
+    setTimeout(() => toast.remove(), 300);
+  }
+
+  function createToast(msg, type = "default", options = {}) {
+    const settings = { ...config, ...options };
+    const toast = document.createElement("div");
+    // Ensure the correct class name is used
+    toast.className = `downstar-toast ${type} ${settings.animation}`;
+
+    // Structure matches Logic.js: content div holding message and close button
+    const content = document.createElement("div");
+    content.className = "toast-content";
+    content.innerHTML = `<span class="toast-message">${msg}</span>`;
+    
+    // Logic for close button
+    if (settings.showClose) {
+      const closeBtn = document.createElement("button");
+      closeBtn.className = "toast-close";
+      closeBtn.innerHTML = "&times;";
+      closeBtn.onclick = () => removeToast(toast);
+      content.appendChild(closeBtn);
+    }
+
+    toast.appendChild(content);
+
+    // Auto remove logic
+    let timer = setTimeout(() => removeToast(toast), settings.duration);
+    if (settings.pauseOnHover) {
+      toast.onmouseenter = () => clearTimeout(timer);
+      toast.onmouseleave = () =>
+        (timer = setTimeout(() => removeToast(toast), settings.duration));
+    }
+
+    return toast;
+  }
+
+  function show(msg, type = "default", options = {}) {
+    const container = createContainer();
+    const toast = createToast(msg, type, options);
+    
+    // Newest on top logic
+    if (config.newestOnTop) container.prepend(toast);
+    else container.append(toast);
+
+    // Max toasts logic (using maxToasts property)
+    if (container.children.length > config.maxToasts) {
+      const target = config.newestOnTop
+        ? container.lastChild
+        : container.firstChild;
+      removeToast(target);
+    }
+  }
+
+  // Public API
+  const Toast = {
+    __ready: true, // Mark as ready for the prevention check
+    show: (msg, options) => show(msg, "default", options),
+    success: (msg, options) => show(msg, "success", options),
+    error: (msg, options) => show(msg, "error", options),
+    warning: (msg, options) => show(msg, "warning", options),
+    info: (msg, options) => show(msg, "info", options),
+
+    clearAll: () => {
+      if (container) container.innerHTML = "";
     },
 
-    _createToast(message, type) {
-      const toast = document.createElement("div");
-      toast.className = `toast ${type}`;
-      toast.innerHTML = `${message}`;
-
-      if (this.config.closeButton) {
-        const close = document.createElement("span");
-        close.textContent = "×";
-        close.className = "toast-close";
-        close.onclick = () => this._remove(toast);
-        toast.appendChild(close);
-      }
-
-      return toast;
+    config: (custom) => {
+      config = { ...config, ...custom };
+      updateContainerPosition();
     },
-
-    _render(toast) {
-      this._container.appendChild(toast);
-      requestAnimationFrame(() => toast.classList.add("show"));
-      setTimeout(() => this._remove(toast), this.config.duration);
-    },
-
-    _remove(toast) {
-      if (!toast) return;
-      toast.classList.remove("show");
-      setTimeout(() => {
-        toast.remove();
-        this._toasts = this._toasts.filter((t) => t !== toast);
-      }, 300);
-    },
-
-    show(message, type = "info") {
-      if (!this._container) this._init();
-
-      if (this._toasts.length >= this.config.max) {
-        this._remove(this._toasts.shift());
-      }
-
-      const toast = this._createToast(message, type);
-      this._toasts.push(toast);
-      this._render(toast);
-    },
-
-    success(msg) { this.show(msg, "success"); },
-    error(msg) { this.show(msg, "error"); },
-    info(msg) { this.show(msg, "info"); },
-
-    set(options = {}) { Object.assign(this.config, options); }
   };
 
-  // DOM Ready → Initialize safely
-  onReady(() => {
-    Toast._init();
-    window.Toast = Toast;
-    console.log("%cDownStar Toast v1.0.0 Loaded ✅", "color: #22c55e;");
-  });
+  // Attach to window and log
+  window.Toast = Toast;
+  console.log("%cDownStar Toast v1.0.0 Loaded (Bundle FIXED) ✅", "color: #2ecc71;");
 })();
