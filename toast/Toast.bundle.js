@@ -1,203 +1,91 @@
-/**
- * DownStar Toast Module — Toast.bundle.js
- * Author: Axshul
- * Version: 1.0.1
- */
+/* Toast.bundle.js — DownStar Toast Module (Standalone) */
 
-(function (global) {
-  // --- Inject CSS Styles ---
-  const css = `
-:root {
-  --toast-bg-dark: #1c1c1e;
-  --toast-bg-light: #ffffff;
-  --toast-bg-success: #2ecc71;
-  --toast-bg-error: #e74c3c;
-  --toast-bg-warning: #f1c40f;
-  --toast-bg-info: #3498db;
-  --toast-color-dark: #fff;
-  --toast-color-light: #111;
-  --toast-radius: 10px;
-  --toast-padding: 0.8rem 1.2rem;
-  --toast-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
+(() => {
+  if (window.Toast) return; // Prevent redefinition
 
-.downstar-toast-container {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  z-index: 9999;
-  gap: 10px;
-  pointer-events: none;
-}
+  const style = document.createElement('style');
+  style.textContent = `
+  :root {
+    --toast-bg: rgba(20, 20, 20, 0.9);
+    --toast-color: #fff;
+    --toast-success-bg: #16a34a;
+    --toast-error-bg: #dc2626;
+    --toast-info-bg: #2563eb;
+  }
 
-.downstar-toast-container.top-right {
-  top: 20px;
-  right: 20px;
-  align-items: flex-end;
-}
-.downstar-toast-container.top-left {
-  top: 20px;
-  left: 20px;
-  align-items: flex-start;
-}
-.downstar-toast-container.bottom-right {
-  bottom: 20px;
-  right: 20px;
-  align-items: flex-end;
-}
-.downstar-toast-container.bottom-left {
-  bottom: 20px;
-  left: 20px;
-  align-items: flex-start;
-}
+  .toast-container {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    right: 20px;
+    bottom: 20px;
+    pointer-events: none;
+  }
 
-.downstar-toast {
-  pointer-events: all;
-  min-width: 250px;
-  max-width: 400px;
-  color: var(--toast-color-dark);
-  border-radius: var(--toast-radius);
-  padding: var(--toast-padding);
-  box-shadow: var(--toast-shadow);
-  font-family: "Inter", sans-serif;
-  font-size: 0.95rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: toastSlideIn 0.4s ease forwards;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .toast {
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-family: system-ui, sans-serif;
+    background: var(--toast-bg);
+    color: var(--toast-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.35s ease;
+    pointer-events: auto;
+  }
 
-.downstar-toast.success { background: var(--toast-bg-success); }
-.downstar-toast.error { background: var(--toast-bg-error); }
-.downstar-toast.warning { background: var(--toast-bg-warning); color: #111; }
-.downstar-toast.info { background: var(--toast-bg-info); }
-.downstar-toast.default { background: var(--toast-bg-dark); color: var(--toast-color-dark); }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.toast-close {
-  background: none;
-  border: none;
-  color: inherit;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 0 0.3rem;
-  line-height: 1;
-  transition: opacity 0.2s ease;
-}
-
-.toast-close:hover { opacity: 0.6; }
-.hide { animation: toastSlideOut 0.3s ease forwards; }
-
-@keyframes toastSlideIn {
-  from { opacity: 0; transform: translateY(20px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes toastSlideOut {
-  from { opacity: 1; transform: translateY(0) scale(1); }
-  to { opacity: 0; transform: translateY(10px) scale(0.9); }
-}`;
-
-  const style = document.createElement("style");
-  style.textContent = css;
+  .toast.success { background: var(--toast-success-bg); }
+  .toast.error { background: var(--toast-error-bg); }
+  .toast.info { background: var(--toast-info-bg); }
+  `;
   document.head.appendChild(style);
 
-  // --- Toast Logic ---
-  const defaultConfig = {
-    position: "top-right",
-    duration: 4000,
-    maxToasts: 5,
-    newestOnTop: true,
-    pauseOnHover: true,
-    showClose: true,
-    animation: "slide",
-    theme: "dark",
-    offsetX: "20px",
-    offsetY: "20px",
-  };
-
-  let config = { ...defaultConfig };
-  let container;
-
-  function createContainer() {
-    if (container) return container;
-    container = document.createElement("div");
-    container.id = "downstar-toast-container";
-    updateContainerPosition();
-    document.body.appendChild(container);
-    return container;
-  }
-
-  function updateContainerPosition() {
-    if (!container) return;
-    container.className = `downstar-toast-container ${config.position} ${config.theme}`;
-    container.style.setProperty("--offset-x", config.offsetX);
-    container.style.setProperty("--offset-y", config.offsetY);
-  }
-
-  function removeToast(toast) {
-    toast.classList.add("hide");
-    setTimeout(() => toast.remove(), 300);
-  }
-
-  function createToast(msg, type = "default", options = {}) {
-    const settings = { ...config, ...options };
-    const toast = document.createElement("div");
-    toast.className = `downstar-toast ${type} ${settings.animation}`;
-
-    const content = document.createElement("div");
-    content.className = "toast-content";
-    content.innerHTML = `<span class="toast-message">${msg}</span>`;
-
-    if (settings.showClose) {
-      const closeBtn = document.createElement("button");
-      closeBtn.className = "toast-close";
-      closeBtn.innerHTML = "&times;";
-      closeBtn.onclick = () => removeToast(toast);
-      content.appendChild(closeBtn);
-    }
-
-    toast.appendChild(content);
-
-    let timer = setTimeout(() => removeToast(toast), settings.duration);
-    if (settings.pauseOnHover) {
-      toast.onmouseenter = () => clearTimeout(timer);
-      toast.onmouseleave = () =>
-        (timer = setTimeout(() => removeToast(toast), settings.duration));
-    }
-
-    return toast;
-  }
-
-  function show(msg, type = "default", options = {}) {
-    const container = createContainer();
-    const toast = createToast(msg, type, options);
-
-    if (config.newestOnTop) container.prepend(toast);
-    else container.append(toast);
-
-    if (container.children.length > config.maxToasts) {
-      const target = config.newestOnTop
-        ? container.lastChild
-        : container.firstChild;
-      removeToast(target);
-    }
-  }
+  const container = document.createElement('div');
+  container.className = 'toast-container';
+  document.body.appendChild(container);
 
   const Toast = {
-    show: (msg, options) => show(msg, "default", options),
-    success: (msg, options) => show(msg, "success", options),
-    error: (msg, options) => show(msg, "error", options),
-    warning: (msg, options) => show(msg, "warning", options),
-    info: (msg, options) => show(msg, "info", options),
-    clearAll: () => {
-      if (container) container.innerHTML = "";
+    config: {
+      duration: 4000,
+      position: 'bottom-right',
+      max: 5
     },
-    config: (custom) => {
-      config = { ...config, ...custom };
-      updateContainerPosition();
+    _toasts: [],
+    _render(toast) {
+      container.appendChild(toast);
+      requestAnimationFrame(() => toast.classList.add('show'));
+      setTimeout(() => this._remove(toast), this.config.duration);
     },
+    _remove(toast) {
+      toast.classList.remove('show');
+      setTimeout(() => {
+        toast.remove();
+        this._toasts = this._toasts.filter(t => t !== toast);
+      }, 300);
+    },
+    show(msg, type = 'info') {
+      if (this._toasts.length >= this.config.max) {
+        this._remove(this._toasts.shift());
+      }
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.textContent = msg;
+      this._toasts.push(toast);
+      this._render(toast);
+    },
+    success(msg) { this.show(msg, 'success'); },
+    error(msg) { this.show(msg, 'error'); },
+    info(msg) { this.show(msg, 'info'); },
+    set(config) { Object.assign(this.config, config); }
   };
 
-  global.Toast = Toast;
-})(window);
+  window.Toast = Toast;
+})();
