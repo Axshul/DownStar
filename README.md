@@ -70,6 +70,8 @@ Single-file bundle for optimal performance:
 - ✅ Production optimized
 - ✅ Minified code
 
+![Screenshot Placeholder](src/Production-Mode_Visual.svg)
+
 ### 2. Developer Mode (For Customization)
 Modular loading for development and customization:
 ```html
@@ -80,7 +82,7 @@ Modular loading for development and customization:
 - ✅ Great for learning
 - ✅ Perfect for contributing
 
-![App Screenshot Placeholder](src/Dev_ModeVisual.svg)
+![Screenshot Placeholder](src/DEV_FINALVisual.svg)
 
 
 ## 🏗️ Architecture
