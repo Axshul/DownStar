@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DownStar Toast Module — Demo</title>
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Load DownStar Toast (Development Mode) -->
+  <script src="https://axshul.github.io/DownStar/toast/Call.js"></script>
+
+  <style>
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      
+    }
+
+    .section-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    button.ds-btn {
+      background-color: #334155;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: background-color 0.25s ease;
+    }
+
+    button.ds-btn:hover {
+      background-color: #475569;
+    }
+
+    select, input {
+      color: #0f172a;
+    }
+    option {
+        color: #0f172a;
+    }
+    #toast-position, #toast-theme, #toast-duration {
+      color: black;
+      background-color: oldlace;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center py-10 px-5">
+  <header class="text-center mb-10">
+    <h1 class="text-4xl font-bold mb-2 text-white">DownStar Toast Module</h1>
+    <p class="text-gray-400">A customizable and production-ready toast notification system by <a href="https://github.com/Axshul" class="text-blue-400 hover:underline">Axshul</a></p>
+  </header>
+
+  <main class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Configuration Panel -->
+    <section class="section-card col-span-1">
+      <h2 class="text-lg font-semibold mb-4 text-white">Configuration</h2>
+      <div class="space-y-4 text-gray-200">
+        <div>
+          <label class="block mb-1 text-sm">Position</label>
+          <select id="toast-position" class="w-full rounded-md p-2">
+            <option>top-right</option>
+            <option>top-left</option>
+            <option>bottom-right</option>
+            <option>bottom-left</option>
+            <option>top-center</option>
+            <option>bottom-center</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-1 text-sm">Theme</label>
+          <select id="toast-theme" class="w-full rounded-md p-2">
+            <option>dark</option>
+            <option>light</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-1 text-sm">Duration (ms)</label>
+          <input id="toast-duration" type="number" value="4000" class="w-full rounded-md p-2" />
+        </div>
+
+        <button id="apply-config" class="mt-2 w-full ds-btn">Apply Config</button>
+      </div>
+    </section>
+
+    <!-- Toast Buttons -->
+    <section class="section-card col-span-2">
+      <h2 class="text-lg font-semibold mb-4 text-white">Try It Out</h2>
+      <div class="flex flex-wrap gap-3">
+        <button class="ds-btn bg-green-600 hover:bg-green-700" onclick="Toast.success('Success Toast 🚀')">Success</button>
+        <button class="ds-btn bg-red-600 hover:bg-red-700" onclick="Toast.error('Error Toast ❌')">Error</button>
+        <button class="ds-btn bg-yellow-500 hover:bg-yellow-600 text-black" onclick="Toast.warning('Warning Toast ⚠️')">Warning</button>
+        <button class="ds-btn bg-blue-600 hover:bg-blue-700" onclick="Toast.info('Info Toast 💡')">Info</button>
+        <button class="ds-btn bg-gray-500 hover:bg-gray-600" onclick="Toast.show('Default Toast ✨')">Default</button>
+        <button class="ds-btn bg-purple-600 hover:bg-purple-700" onclick="Toast.clearAll()">Clear All</button>
+      </div>
+
+      <div class="mt-8">
+        <h3 class="text-md font-semibold mb-2">Sample Code</h3>
+        <pre class="bg-gray-900 text-gray-300 text-sm rounded-lg p-4 overflow-x-auto">
+&lt;script src="https://axshul.github.io/DownStar/toast/Toast.bundle.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  Toast.success("Hello from DownStar!");
+&lt;/script&gt;
+        </pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-12 text-center text-gray-500 text-sm">
+    <p>© 2025 DownStar | MIT Licensed | Built by <a href="https://github.com/Axshul" class="text-blue-400 hover:underline">Axshul</a></p>
+  </footer>
+
+  <script>
+    const applyConfigBtn = document.getElementById("apply-config");
+
+    applyConfigBtn.addEventListener("click", () => {
+      const position = document.getElementById("toast-position").value;
+      const theme = document.getElementById("toast-theme").value;
+      const duration = parseInt(document.getElementById("toast-duration").value, 10);
+
+      Toast.config({
+        position,
+        theme,
+        duration
+      });
+
+      Toast.info("Configuration Applied ✅");
+    });
+  </script>
+</body>
+</html>
