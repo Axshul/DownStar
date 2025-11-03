@@ -93,7 +93,7 @@ DownStar is hosted via GitHub Pages (user page: `https://axshul.github.io/DownSt
 |------|-------------|-------------|
 | Development | `https://axshul.github.io/DownStar/toast/Call.js` | Loads `Logic.js` + `Styles.css` via the module loader — editable and readable (dev-friendly). |
 | Production | `https://axshul.github.io/DownStar/toast/Toast.bundle.js` | Single-file bundle hosted on GitHub Pages — optimized for production use. |
-| CDN (jsDelivr) | `https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js` | Fast, globally cached delivery via jsDelivr — recommended for public sites. |
+| CDN (jsDelivr) | `https://cdn.jsdelivr.net/gh/Axshul/DownStar@latest/toast/Toast.bundle.js` | Fast, globally cached delivery via jsDelivr — recommended for public sites. |na
 
 ### jsDelivr URL formats (examples)
 
