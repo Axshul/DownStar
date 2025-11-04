@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔔 DownStar Toast Module
+# [🔔 DownStar Toast Module](https://axshul.github.io/DownStar/toast/)
 
 > Enterprise-grade toast notifications with zero dependencies
 
