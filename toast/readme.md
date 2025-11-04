@@ -4,7 +4,7 @@
 
 > Enterprise-grade toast notifications with zero dependencies
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Axshul/DownStar)
+[![Version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://github.com/Axshul/DownStar)
 [![Size](https://img.shields.io/badge/size-<3kb-green.svg)](https://github.com/Axshul/DownStar/toast)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Axshul/DownStar/LICENSE)
 
